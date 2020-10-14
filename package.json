@@ -1,0 +1,17 @@
+{
+  "name": "@lucemans/logger",
+  "version": "1.0.1",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc ./src/index.ts",
+    "publish": "tsc ./src/index.ts && npm publish"
+  },
+  "author": "lucemans",
+  "license": "ISC",
+  "private": false,
+  "dependencies": {
+    "chalk": "^4.1.0"
+  }
+}
