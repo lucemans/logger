@@ -18,7 +18,7 @@ var Logger = /** @class */ (function () {
         for (var _i = 0; _i < arguments.length; _i++) {
             str[_i] = arguments[_i];
         }
-        this.raw.apply(this, __spreadArrays([chalk.gray('DUMB')], str));
+        this.raw(chalk.magenta('DUMB'), chalk.bgMagenta(chalk.white.apply(chalk, __spreadArrays([' '], str, [' ']))));
     };
     Logger.prototype.success = function () {
         var str = [];
@@ -32,21 +32,21 @@ var Logger = /** @class */ (function () {
         for (var _i = 0; _i < arguments.length; _i++) {
             str[_i] = arguments[_i];
         }
-        this.raw.apply(this, __spreadArrays([chalk.yellowBright('WARN')], str));
+        this.raw(chalk.bgBlack(chalk.yellowBright('WARN')), chalk.bgYellow(chalk.black.apply(chalk, __spreadArrays([' '], str, [' ']))));
     };
     Logger.prototype.info = function () {
         var str = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             str[_i] = arguments[_i];
         }
-        this.raw.apply(this, __spreadArrays([chalk.cyan('INFO')], str));
+        this.raw(chalk.cyan('INFO'), chalk.gray.apply(chalk, str));
     };
     Logger.prototype.error = function () {
         var str = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             str[_i] = arguments[_i];
         }
-        this.raw.apply(this, __spreadArrays([chalk.red('ERROR')], str));
+        this.raw(chalk.red('ERROR'), chalk.bgRed(chalk.black.apply(chalk, __spreadArrays([' '], str, [' ']))));
     };
     Logger.prototype.raw = function (infix) {
         var str = [];
