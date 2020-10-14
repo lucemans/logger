@@ -5,22 +5,22 @@ export class Logger {
     constructor(prefix: string) {
         this.prefix = prefix;
     }
-    dumb(str: string) {
-        this.raw(str, chalk.gray('DUMB'));
+    dumb(...str: string[]) {
+        this.raw(chalk.gray('DUMB'), ...str);
     }
-    success(str: string) {
-        this.raw(str, chalk.greenBright('SUCCESS'));
+    success(...str: string[]) {
+        this.raw(chalk.greenBright('SUCCESS'), ...str);
     }
-    warn(str: string) {
-        this.raw(str, chalk.yellowBright('WARN'));
+    warn(...str: string[]) {
+        this.raw(chalk.yellowBright('WARN'), ...str);
     }
-    info(str: string) {
-        this.raw(str, chalk.cyan('INFO'));
+    info(...str: string[]) {
+        this.raw(chalk.cyan('INFO'), ...str);
     }
-    error(str: string) {
-        this.raw(str, chalk.red('ERROR'));
+    error(...str: string[]) {
+        this.raw(chalk.red('ERROR'), ...str);
     }
-    raw(str: string, infix: string) {
-        console.log(this.prefix + " " + infix + " " + str);
+    raw(infix: string, ...str: string[]) {
+        console.log(this.prefix + " " + infix + " " + str.join(' '));
     }
 }
